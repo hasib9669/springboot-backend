@@ -1,0 +1,40 @@
+pipeline{
+    agent any
+    stages{
+        stage("Checkout"){
+            steps{
+                git "https://github.com/hasib9669/springboot-backend.git"
+            }
+        }
+          stage("Build"){
+            steps{
+                sh """
+                mvn clean
+                mvn compile
+                      """
+            }
+        }
+        stage("Test"){
+            steps{
+                sh """
+                mvn test"""
+            }
+        }
+      
+        stage("Deploy"){
+            steps{
+                sh """
+                7z a -t7z ./springboot-backend.git
+                echo 'build deployed'
+                """
+            }
+        }
+    }
+    post{
+        always{
+            sh "rm -rf ./*"
+        }
+    }
+    
+    
+}
