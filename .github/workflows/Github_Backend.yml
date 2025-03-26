@@ -1,0 +1,17 @@
+
+name: Github_Backend
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    Test_Build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              run: git clone https://github.com/hasib9669/springboot-backend.git
+            - name: Test
+              run: |
+                cd ./springboot-backend.git
+                mvn test
