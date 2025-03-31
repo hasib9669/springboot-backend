@@ -9,7 +9,7 @@ on:
    
 
 jobs:
-    Explore-Github-Actions:
+      Github_Actions:
         runs-on: ubuntu-latest
         steps:
             - name: cloning repository
@@ -18,12 +18,14 @@ jobs:
               run: |
                 cd springboot-backend
                 mvn clean 
-                mvn compile
+                mvn package
 
             - name: "Test"
               run: |
                 cd springboot-backend
                 mvn test
+            - name: "Deploy"
+              run: echo "Build deployed"
               
             
 
