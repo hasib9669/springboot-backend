@@ -17,7 +17,11 @@ jobs:
             - name: "Build"
               run: |
                 cd springboot-backend
-                mvn clean install
+                mvn clean 
+                mvn compile
+
+            - name: "Test"
+              run: mvn test
               
             
 
