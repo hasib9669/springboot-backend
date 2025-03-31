@@ -13,9 +13,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: cloning repository
-              run: git "https://github.com/hasib9669/springboot-backend.git"
+              run: git clone https://github.com/hasib9669/springboot-backend.git
             - name: "Build"
-              run: mvn clean install
+              run: |
+                cd springboot-backend.git
+                mvn clean install
               
             
 
