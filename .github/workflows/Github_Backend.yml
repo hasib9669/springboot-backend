@@ -21,7 +21,9 @@ jobs:
                 mvn compile
 
             - name: "Test"
-              run: mvn test
+              run: |
+                cd springboot-backend
+                mvn test
               
             
 
