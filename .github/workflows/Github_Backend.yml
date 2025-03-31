@@ -1,17 +1,24 @@
-
-name: Github_Backend
-on:
+name: Workflow-Übung
+on: 
     push:
-        branches:
+        branches: 
             - master
+    pull_request: 
+            branches: 
+             - master
+   
 
 jobs:
-    Test_Build:
+    Explore-Github-Actions:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              run: git clone https://github.com/hasib9669/springboot-backend.git
-            - name: Test
-              run: |
-                cd ./springboot-backend.git
-                mvn test
+            - name: cloning repository
+              run: git "https://github.com/hasib9669/springboot-backend.git"
+            - name: "Build"
+              run: mvn clean install
+              
+            
+
+            
+
+
