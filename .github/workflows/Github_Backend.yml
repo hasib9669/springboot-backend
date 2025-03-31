@@ -16,7 +16,7 @@ jobs:
               run: git clone https://github.com/hasib9669/springboot-backend.git
             - name: "Build"
               run: |
-                cd springboot-backend.git
+                cd springboot-backend
                 mvn clean install
               
             
